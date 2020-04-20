@@ -6,7 +6,7 @@ public class Arvore {
 		raiz.pergunta = "É mulher?";
 		
 			raiz.sim = new Node();
-			raiz.sim.setPergunta("É mãe?");
+			raiz.sim.setPergunta("É ou já foi mãe? (biolóigica ou adotiva)");
 			
 				raiz.sim.sim = new Node();
 				raiz.sim.sim.setPergunta("É uma demônio?");
@@ -82,6 +82,15 @@ public class Arvore {
 
 								raiz.sim.nao.nao.sim.nao.nao = new Node();
 								raiz.sim.nao.nao.sim.nao.nao.setPersonagem("Uma das filhas do Mestre Ubuyashiki Kagaya: Ubuyashiki Hinaki, Ubuyashiki Nichika, Ubuyashiki Kiriya ou Ubuyashiki Kanata!\nDesculpe, elas são quase a mesma pessoa...");
+
+			raiz.nao = new Node();
+			raiz.nao.setPergunta("É um demônio?");
+
+				raiz.nao.sim = new Node();
+				raiz.nao.sim.setPergunta("É um dos Doze Demônios da Lua?");
+
+					raiz.nao.sim.sim = new Node();
+					raiz.nao.sim.sim.setPergunta("");
 
 
     }
