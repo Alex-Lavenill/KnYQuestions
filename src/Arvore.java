@@ -53,8 +53,8 @@ public class Arvore {
 						raiz.sim.nao.sim.nao = new Node();
 						raiz.sim.nao.sim.nao.setPergunta("Já devorou humanos?");
     
-							raiz.sim.nao.sim.nao.nao = new Node();
-							raiz.sim.nao.sim.nao.nao.setPersonagem("Tamayo!");
+							raiz.sim.nao.sim.nao.sim = new Node();
+							raiz.sim.nao.sim.nao.sim.setPersonagem("Tamayo!");
 							
 							raiz.sim.nao.sim.nao.nao = new Node();
 							raiz.sim.nao.sim.nao.nao.setPersonagem("Kamado Nezuko!");
@@ -108,7 +108,7 @@ public class Arvore {
 						raiz.nao.sim.sim.sim.setPergunta("Atacou a Vila dos Ferreiros?");
 
 							raiz.nao.sim.sim.sim.sim = new Node();
-							raiz.nao.sim.sim.sim.sim.setPrgunta("Lutou contra Tokito Muichiro?");						
+							raiz.nao.sim.sim.sim.sim.setPergunta("Lutou contra Tokito Muichiro?");
 
 								raiz.nao.sim.sim.sim.sim.sim = new Node();
 								raiz.nao.sim.sim.sim.sim.sim.setPersonagem("Gyokko, Lua Superior Cinco!");
@@ -120,7 +120,7 @@ public class Arvore {
 							raiz.nao.sim.sim.sim.nao.setPergunta("É um substituto de um Lua Superior que morreu?");
 
 								raiz.nao.sim.sim.sim.nao.sim = new Node();
-								raiz.nao.sim.sim.sim.nao.sim.setPrgunta("Utiliza um instrumento musical?");
+								raiz.nao.sim.sim.sim.nao.sim.setPergunta("Utiliza um instrumento musical?");
 
 									raiz.nao.sim.sim.sim.nao.sim.sim = new Node();
 									raiz.nao.sim.sim.sim.nao.sim.sim.setPersonagem("Nakime, Lua Superior Quatro!");
@@ -195,16 +195,16 @@ public class Arvore {
 								raiz.nao.sim.nao.sim.nao.nao.setPersonagem("Kibutsji Muzan! O criador dos demônios!");
 
 						raiz.nao.sim.nao.nao = new Node();
-						raiz.nao.sim.nao.nao.setPrgunta("Tentou atacar uma Marechi (sangue raro)?");
+						raiz.nao.sim.nao.nao.setPergunta("Tentou atacar uma Marechi (sangue raro)?");
 
 							raiz.nao.sim.nao.nao.sim = new Node();
-							raiz.nao.sim.nao.nao.sim.setPrgunta("Foi ferido durante um desintendimento?");
+							raiz.nao.sim.nao.nao.sim.setPergunta("Foi ferido durante um desintendimento?");
 
 								raiz.nao.sim.nao.nao.sim.sim = new Node();
 								raiz.nao.sim.nao.nao.sim.sim.setPersonagem("Kyogai, Demônio dos Tambores de Tsuzumi!");
 
 								raiz.nao.sim.nao.nao.sim.nao = new Node();
-								raiz.nao.sim.nao.nao.sim.nao.setPrgunta("Foi derrotado por Agatsuma Zenitsu?");
+								raiz.nao.sim.nao.nao.sim.nao.setPergunta("Foi derrotado por Agatsuma Zenitsu?");
 
 									raiz.nao.sim.nao.nao.sim.nao.sim = new Node();
 									raiz.nao.sim.nao.nao.sim.nao.sim.setPersonagem("Demônio da Língua da mansão Tsuzumi!");
@@ -216,7 +216,7 @@ public class Arvore {
 							raiz.nao.sim.nao.nao.nao.setPergunta("Assombrou o monte Natagumo?");
 
 								raiz.nao.sim.nao.nao.nao.sim = new Node();
-								raiz.nao.sim.nao.nao.nao.sim.setPrgunta("Seu corpo podia quebrar as espadas Nichirin?");
+								raiz.nao.sim.nao.nao.nao.sim.setPergunta("Seu corpo podia quebrar as espadas Nichirin?");
 
 									raiz.nao.sim.nao.nao.nao.sim.sim = new Node();
 									raiz.nao.sim.nao.nao.nao.sim.sim.setPersonagem("Um dos Demônios Aranha, o Pai do Rui!");
@@ -312,7 +312,7 @@ public class Arvore {
 									raiz.nao.nao.nao.nao.sim.sim.nao.setPersonagem("Shinazugawa Genya!");
 
 								raiz.nao.nao.nao.nao.sim.nao = new Node();
-								raiz.nao.nao.nao.nao.sim.nao.setPersonagem("Agatsuma Zenitsu!");7
+								raiz.nao.nao.nao.nao.sim.nao.setPersonagem("Agatsuma Zenitsu!");
 
 							raiz.nao.nao.nao.nao.nao = new Node();
 							raiz.nao.nao.nao.nao.nao.setPergunta("Veste uma cabeça de javali como máscara e tem a melhor risada do anime?");
@@ -333,22 +333,19 @@ public class Arvore {
     	raiz = raiz.nao;
 	}
 
-	public boolean possuiPersonagem(){
-    	if (raiz.getPersonagem() == null){
-    		return false;
-		}
-    	return true;
+	public String getPergunta(){
+    	return raiz.getPergunta();
 	}
 
-	public void conteudo(){
-    	if (raiz.personagem == null){
-			System.out.println("\n### SEU PERSONAGEM... ###");
-			System.out.println(raiz.pergunta);
-		}
-    	else {
-			System.out.println("\n### VOCÊ PENSOU EM...###");
-			System.out.println(raiz.personagem);
-		}
+	public String getPersonagem(){
+    	return raiz.getPersonagem();
+	}
+
+	public int conteudo(){
+    	if (raiz.personagem == null)
+			return 0;
+    	else
+			return 1;
 	}
 
 }
