@@ -12,7 +12,7 @@ public class Node {
         this.nao = n;
     }
 
-    public void  setPersonagem(String personagem){
+    public void setPersonagem(String personagem){
         this.personagem = personagem;
         this.pergunta = null;
     }

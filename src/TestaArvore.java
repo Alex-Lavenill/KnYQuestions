@@ -8,7 +8,5 @@ public class TestaArvore {
         KnYQSwing knyqSwing = new KnYQSwing();
         knyqSwing.setVisible(true);
 
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-
     }
 }
